@@ -35,6 +35,6 @@ fn main() {
     .attach(DbConn::fairing())
     .attach(Template::fairing())
     .mount("/", StaticFiles::from(concat!(env!("CARGO_MANIFEST_DIR"), "/static")))
-    .mount("/", routes![homepage, handlers::post_handler, handlers::new_post, handlers::new_post_form])
+    .mount("/", routes![homepage, handlers::new_post, handlers::new_post_form])
     .launch();
 }
